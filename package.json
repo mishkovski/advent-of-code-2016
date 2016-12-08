@@ -1,0 +1,20 @@
+{
+  "name": "advent-of-code",
+  "version": "0.0.1",
+  "description": "advent-of-code",
+  "author": {
+    "name": "Stoyan Mishkovski",
+    "email": "mishkovski@gmail.com"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "js-md5": "^0.4.1"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "chai": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
