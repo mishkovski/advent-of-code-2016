@@ -10,6 +10,7 @@ describe('day5', function () {
         assert.equal(day5.findPassword('abc'), '18f47a30');
     });
 
+
     it('findPassword works correctly for the puzzle input', function () {
         printResult(day5.findPassword('ojvtpuvg'));
     });
