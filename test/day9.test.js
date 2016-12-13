@@ -3,7 +3,7 @@ var readFile = require('../lib/read.file.js');
 var printResult = require('./print.result.js');
 var day9 = require('../lib/day9.js');
 
-describe('day9', function () {
+describe.only('day9', function () {
     it('getLine works for ADVENT', function () {
         assert.equal(day9.getDecompressed('ADVENT'), 'ADVENT');
     });
@@ -35,12 +35,12 @@ describe('day9', function () {
 
     it('findMarker works for X(8x2)(3x3)ABCY', function () {
         assert.deepEqual(day9.findMarker('X(8x2)(3x3)ABCY'),
-            { found: true, content: '8x2', phraseLength: 8, miltiplier: 2 });
+            { found: true, content: '8x2', phraseLength: 8, multiplier: 2 });
     });
 
     it('findMarker works for X(80x20)(3x3)ABCY', function () {
         assert.deepEqual(day9.findMarker('X(80x20)(3x3)ABCY'),
-            { found: true, content: '80x20', phraseLength: 80, miltiplier: 20 });
+            { found: true, content: '80x20', phraseLength: 80, multiplier: 20 });
     });
 
     it('findSubstring works for X(8x2)(3x3)ABCY', function () {
@@ -86,4 +86,9 @@ describe('day9', function () {
     it.only('calculateLength works for (25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN', function () {
         assert.equal(day9.calculateLength('(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN', 1), 445);
     });
+
+    it('calculateLength works correctly for the puzzle input', function () {
+        var input = readFile('./test/day9.input');
+        printResult(day9.calculateLength(input, 1));
+    })
 });
